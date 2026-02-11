@@ -14,6 +14,8 @@ func _physics_process(delta):
 	var direction = Vector2.ZERO
 	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+if Input.is_action_just_pressed("cast_spell"):
+	cast_spell()
 	
 	if direction != Vector2.ZERO:
 		velocity = direction.normalized() * speed
